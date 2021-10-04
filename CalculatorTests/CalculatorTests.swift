@@ -28,7 +28,34 @@ class CalculatorTests: XCTestCase {
         calc.setNumber(4)
         let newValue = calc.calculate(symbol: "AC")
         XCTAssertEqual(newValue, 0)
+    }
 
+    // MARK: - 四則演算
+
+    func testAdd() {
+        calc.intermediateCalculation = (n1: 3, calcMethod: "+")
+      let newValue = calc.performTwoNumCalculation(n2: 4)
+        XCTAssertEqual(newValue, 7)
+    }
+
+    func testSubtract() {
+        calc.intermediateCalculation = (n1: 3, calcMethod: "-")
+      let newValue = calc.performTwoNumCalculation(n2: 4)
+        XCTAssertEqual(newValue, -1)
+    }
+
+    func testMultiply() {
+        calc.intermediateCalculation = (n1: 3, calcMethod: "×")
+      let newValue = calc.performTwoNumCalculation(n2: 4)
+        XCTAssertEqual(newValue, 12)
+    }
+
+    func testDeivide() {
+        calc.intermediateCalculation = (n1: 12, calcMethod: "÷")
+      let newValue = calc.performTwoNumCalculation(n2: 4)
+        XCTAssertEqual(newValue, 3)
     }
 
 }
+
+

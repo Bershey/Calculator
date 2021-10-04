@@ -11,7 +11,7 @@ struct CalculatorLogic {
     // MARK: -Properties
    private  var number: Double?
 
-    private var intermediateCalculation: (n1: Double, calcMethod: String)?
+     var intermediateCalculation: (n1: Double, calcMethod: String)?
 
     mutating func setNumber(_ number: Double) {
         self.number = number
@@ -36,7 +36,7 @@ struct CalculatorLogic {
         return nil
     }
 
-    private func performTwoNumCalculation(n2: Double) -> Double? {
+     func performTwoNumCalculation(n2: Double) -> Double? {
 
         if let n1 = intermediateCalculation?.n1,
            let operation = intermediateCalculation?.calcMethod {
