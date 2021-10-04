@@ -66,6 +66,12 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(newValue, 15)
     }
 
+    func testSquareRoot () {
+        calc.setNumber(9)
+        let newValue = calc.calculate(symbol: "√")
+        XCTAssertEqual(newValue, 3)
+    }
+
     // MARK: - DecimalPoint
 
     func testCheckContainDot() {
