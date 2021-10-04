@@ -21,6 +21,7 @@ struct CalculatorLogic {
             case "+/-":
                 return selectedNumber * -1
             case "AC":
+                intermediateCalculation?.n1 = 0
                 return 0
             case "%":
                 return selectedNumber * 0.01
