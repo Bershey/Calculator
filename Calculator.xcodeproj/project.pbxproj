@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		8FD3F18D270AE8D600A9E9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F18C270AE8D600A9E9E9 /* AppDelegate.swift */; };
 		8FD3F18F270AE8D600A9E9E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F18E270AE8D600A9E9E9 /* SceneDelegate.swift */; };
-		8FD3F191270AE8D600A9E9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F190270AE8D600A9E9E9 /* ViewController.swift */; };
+		8FD3F191270AE8D600A9E9E9 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F190270AE8D600A9E9E9 /* CalculatorViewController.swift */; };
 		8FD3F194270AE8D600A9E9E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3F192270AE8D600A9E9E9 /* Main.storyboard */; };
 		8FD3F196270AE8D700A9E9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3F195270AE8D700A9E9E9 /* Assets.xcassets */; };
 		8FD3F199270AE8D700A9E9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3F197270AE8D700A9E9E9 /* LaunchScreen.storyboard */; };
 		8FD3F1A4270AE8D700A9E9E9 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1A3270AE8D700A9E9E9 /* CalculatorTests.swift */; };
 		8FD3F1AE270AE8D700A9E9E9 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1AD270AE8D700A9E9E9 /* CalculatorUITests.swift */; };
 		8FD3F1B0270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1AF270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift */; };
+		8FD3F1C0270AEA2900A9E9E9 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1BF270AEA2900A9E9E9 /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		8FD3F189270AE8D600A9E9E9 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3F18C270AE8D600A9E9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD3F18E270AE8D600A9E9E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8FD3F190270AE8D600A9E9E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FD3F190270AE8D600A9E9E9 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		8FD3F193270AE8D600A9E9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FD3F195270AE8D700A9E9E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FD3F198270AE8D700A9E9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		8FD3F1A9270AE8D700A9E9E9 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD3F1AD270AE8D700A9E9E9 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		8FD3F1AF270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FD3F1BF270AEA2900A9E9E9 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				8FD3F18C270AE8D600A9E9E9 /* AppDelegate.swift */,
 				8FD3F18E270AE8D600A9E9E9 /* SceneDelegate.swift */,
-				8FD3F190270AE8D600A9E9E9 /* ViewController.swift */,
-				8FD3F192270AE8D600A9E9E9 /* Main.storyboard */,
+				8FD3F1BE270AEA1200A9E9E9 /* Mode */,
+				8FD3F1BD270AEA0900A9E9E9 /* Controller */,
+				8FD3F1BC270AEA0100A9E9E9 /* View */,
 				8FD3F195270AE8D700A9E9E9 /* Assets.xcassets */,
 				8FD3F197270AE8D700A9E9E9 /* LaunchScreen.storyboard */,
 				8FD3F19A270AE8D700A9E9E9 /* Info.plist */,
@@ -125,6 +128,30 @@
 				8FD3F1AF270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		8FD3F1BC270AEA0100A9E9E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FD3F192270AE8D600A9E9E9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FD3F1BD270AEA0900A9E9E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FD3F190270AE8D600A9E9E9 /* CalculatorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FD3F1BE270AEA1200A9E9E9 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+				8FD3F1BF270AEA2900A9E9E9 /* CalculatorLogic.swift */,
+			);
+			path = Mode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD3F191270AE8D600A9E9E9 /* ViewController.swift in Sources */,
+				8FD3F1C0270AEA2900A9E9E9 /* CalculatorLogic.swift in Sources */,
+				8FD3F191270AE8D600A9E9E9 /* CalculatorViewController.swift in Sources */,
 				8FD3F18D270AE8D600A9E9E9 /* AppDelegate.swift in Sources */,
 				8FD3F18F270AE8D600A9E9E9 /* SceneDelegate.swift in Sources */,
 			);
@@ -367,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
