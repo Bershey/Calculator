@@ -44,7 +44,7 @@ class CalculatorViewController: UIViewController {
                 displayLabel.text =   calculator.checkedNumber(number: numValue)
                 isFinishedTypingNumber = false
             } else {
-                displayLabel.text! += calculator.checkdContainDotNumber(number: numValue, display: displayLabel.text!) ?? ""
+                displayLabel.text! += calculator.checkdContainDotNumber(number: numValue, displayText: displayLabel.text!) ?? ""
             }
         }
     }
@@ -52,7 +52,6 @@ class CalculatorViewController: UIViewController {
     @IBAction func calculatorButtonPressed(_ sender: UIButton) {
         isFinishedTypingNumber = true
         calculator.setNumber(displayValue)
-
         if let calcMethod = sender.currentTitle {
             if let result = calculator.calculate(symbol: calcMethod) {
                 displayValue = result
