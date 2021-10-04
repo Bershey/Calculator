@@ -17,6 +17,7 @@
 		8FD3F1AE270AE8D700A9E9E9 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1AD270AE8D700A9E9E9 /* CalculatorUITests.swift */; };
 		8FD3F1B0270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1AF270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift */; };
 		8FD3F1C0270AEA2900A9E9E9 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3F1BF270AEA2900A9E9E9 /* CalculatorLogic.swift */; };
+		8FD3F24A270B38D900A9E9E9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FD3F249270B38D900A9E9E9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8FD3F1AD270AE8D700A9E9E9 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		8FD3F1AF270AE8D700A9E9E9 /* CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8FD3F1BF270AEA2900A9E9E9 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
+		8FD3F249270B38D900A9E9E9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		8FD3F180270AE8D600A9E9E9 = {
 			isa = PBXGroup;
 			children = (
+				8FD3F249270B38D900A9E9E9 /* README.md */,
 				8FD3F18B270AE8D600A9E9E9 /* Calculator */,
 				8FD3F1A2270AE8D700A9E9E9 /* CalculatorTests */,
 				8FD3F1AC270AE8D700A9E9E9 /* CalculatorUITests */,
@@ -261,6 +264,7 @@
 			files = (
 				8FD3F199270AE8D700A9E9E9 /* LaunchScreen.storyboard in Resources */,
 				8FD3F196270AE8D700A9E9E9 /* Assets.xcassets in Resources */,
+				8FD3F24A270B38D900A9E9E9 /* README.md in Resources */,
 				8FD3F194270AE8D600A9E9E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "#if which swiftlint >/dev/null; then\n # swiftlint\n#else\n # echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
