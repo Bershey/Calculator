@@ -9,9 +9,11 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     // MARK: - IBOutlets
+
     @IBOutlet weak var displayLabel: UILabel!
 
     // MARK: - Properties
+
     private var isFinishedTypingNumber: Bool = true
     private var calculator = CalculatorLogic()
 
@@ -31,20 +33,22 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-
     // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: - IBActions
+
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         if let numValue = sender.currentTitle {
             if isFinishedTypingNumber {
                 displayLabel.text =   calculator.checkedNumber(number: numValue)
                 isFinishedTypingNumber = false
             } else {
-                displayLabel.text! += calculator.checkdContainDotNumber(number: numValue, displayText: displayLabel.text!) ?? ""
+                displayLabel.text! += calculator.checkdContainDotNumber(number: numValue,
+                                                                        displayText: displayLabel.text!) ?? ""
             }
         }
     }
@@ -58,6 +62,4 @@ class CalculatorViewController: UIViewController {
             }
         }
     }
-
 }
-

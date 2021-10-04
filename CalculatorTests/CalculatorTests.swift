@@ -12,35 +12,34 @@ class CalculatorTests: XCTestCase {
 
     var calc = CalculatorLogic()
 
-
-
-    // MARK: - Operation
-
+    // MARK: - testOperation
+    
     func testAdd() {
         calc.intermediateCalculation = (n1: 3, calcMethod: "+")
-        let newValue = calc.performTwoNumCalculation(n2: 4)
+        let newValue = calc.performTwoNumCalculation(secondNumber: 4)
         XCTAssertEqual(newValue, 7)
     }
 
     func testSubtract() {
         calc.intermediateCalculation = (n1: 3, calcMethod: "-")
-        let newValue = calc.performTwoNumCalculation(n2: 4)
+        let newValue = calc.performTwoNumCalculation(secondNumber: 4)
         XCTAssertEqual(newValue, -1)
     }
 
     func testMultiply() {
         calc.intermediateCalculation = (n1: 3, calcMethod: "×")
-        let newValue = calc.performTwoNumCalculation(n2: 4)
+        let newValue = calc.performTwoNumCalculation(secondNumber: 4)
         XCTAssertEqual(newValue, 12)
     }
 
     func testDeivide() {
         calc.intermediateCalculation = (n1: 12, calcMethod: "÷")
-        let newValue = calc.performTwoNumCalculation(n2: 4)
+        let newValue = calc.performTwoNumCalculation(secondNumber: 4)
         XCTAssertEqual(newValue, 3)
     }
 
-    // MARK: - SpecialOperation
+    // MARK: - testSpecialOperation
+
     func testChengeSign() {
         calc.setNumber(2)
         let newValue = calc.calculate(symbol: "+/-")
@@ -72,7 +71,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(newValue, 3)
     }
 
-    // MARK: - DecimalPoint
+    // MARK: - testDecimalPoint
 
     func testCheckContainDot() {
         let newValue = calc.checkdContainDotNumber(number: ".", displayText: "3.14")
@@ -85,5 +84,3 @@ class CalculatorTests: XCTestCase {
     }
 
 }
-
-

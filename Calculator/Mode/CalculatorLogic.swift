@@ -7,65 +7,46 @@
 
 import Foundation
 
-enum Operand {
-    
-    case add
-    case subtract
-    case multiply
-    case divide
-
-    case equal
-    case allClear
-    case changeSign
-    case percent
-
-}
-
 struct CalculatorLogic {
-    // MARK: -Properties
     private  var number: Double?
     var intermediateCalculation: (n1: Double, calcMethod: String)?
-    //    var operand: Operand
 
     mutating func setNumber(_ number: Double) {
         self.number = number
     }
 
-
     mutating func calculate(symbol: String) -> Double? {
-        if let n = number {
+        if let selectedNumber = number {
             switch symbol {
             case "+/-":
-                return n * -1
+                return selectedNumber * -1
             case "AC":
                 return 0
             case "%":
-                return n * 0.01
+                return selectedNumber * 0.01
             case "=":
-                return performTwoNumCalculation(n2: n)
+                return performTwoNumCalculation(secondNumber: selectedNumber)
             case "√":
-                return sqrt(n)
+                return sqrt(selectedNumber)
             default:
-                print("defaultが発動")
-                intermediateCalculation = (n1: n, calcMethod: symbol)
+                intermediateCalculation = (n1: selectedNumber, calcMethod: symbol)
             }
         }
         return nil
     }
 
-    func performTwoNumCalculation(n2: Double) -> Double? {
-
-        if let n1 = intermediateCalculation?.n1,
+    func performTwoNumCalculation(secondNumber: Double) -> Double? {
+        if let firstNumber = intermediateCalculation?.n1,
            let operation = intermediateCalculation?.calcMethod {
             switch operation {
             case "+":
-                return n1 + n2
+                return firstNumber + secondNumber
             case "-":
-                return n1 - n2
+                return firstNumber - secondNumber
             case "×":
-                return n1 * n2
+                return firstNumber * secondNumber
             case "÷":
-                return n1 / n2
+                return firstNumber / secondNumber
             default:
                 break
             }
@@ -81,11 +62,10 @@ struct CalculatorLogic {
         }
     }
 
-    func checkdContainDotNumber(number: String, displayText: String) -> String?  {
+    func checkdContainDotNumber (number: String, displayText: String) -> String? {
         if number == "." && displayText.contains(".") {
             return nil
         }
         return number
     }
-
 }
