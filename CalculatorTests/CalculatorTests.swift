@@ -9,6 +9,7 @@ import XCTest
 @testable import Calculator
 
 class CalculatorTests: XCTestCase {
+    // MARK: - Properties
 
     var calc = CalculatorLogic()
 
