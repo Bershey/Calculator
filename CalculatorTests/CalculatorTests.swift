@@ -12,25 +12,9 @@ class CalculatorTests: XCTestCase {
 
     var calc = CalculatorLogic()
 
-    func testChengeSign() {
-        calc.setNumber(2)
-        let newValue = calc.calculate(symbol: "+/-")
-        XCTAssertEqual(newValue, -2)
-    }
 
-    func testPercent() {
-        calc.setNumber(3)
-        let newValue = calc.calculate(symbol: "%")
-        XCTAssertEqual(newValue, 0.03)
-    }
 
-    func testAllClear() {
-        calc.setNumber(4)
-        let newValue = calc.calculate(symbol: "AC")
-        XCTAssertEqual(newValue, 0)
-    }
-
-    // MARK: - 四則演算
+    // MARK: - operation
 
     func testAdd() {
         calc.intermediateCalculation = (n1: 3, calcMethod: "+")
@@ -54,6 +38,32 @@ class CalculatorTests: XCTestCase {
         calc.intermediateCalculation = (n1: 12, calcMethod: "÷")
       let newValue = calc.performTwoNumCalculation(n2: 4)
         XCTAssertEqual(newValue, 3)
+    }
+
+    // MARK: - specialOperation
+    func testChengeSign() {
+        calc.setNumber(2)
+        let newValue = calc.calculate(symbol: "+/-")
+        XCTAssertEqual(newValue, -2)
+    }
+
+    func testPercent() {
+        calc.setNumber(3)
+        let newValue = calc.calculate(symbol: "%")
+        XCTAssertEqual(newValue, 0.03)
+    }
+
+    func testAllClear() {
+        calc.setNumber(4)
+        let newValue = calc.calculate(symbol: "AC")
+        XCTAssertEqual(newValue, 0)
+    }
+
+    func testEqual () {
+        calc.setNumber(3)
+        calc.intermediateCalculation = (n1: 12, calcMethod: "+")
+        let newValue = calc.calculate(symbol: "=")
+        XCTAssertEqual(newValue, 15)
     }
 
 }
