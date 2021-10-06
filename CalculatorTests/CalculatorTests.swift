@@ -76,7 +76,8 @@ class CalculatorTests: XCTestCase {
 
     func testCheckContainDot() {
         let newValue = calc.checkdContainDotNumber(number: ".", displayText: "3.14")
-        XCTAssertNil(newValue)
+        XCTAssertEqual(newValue, "")
+
     }
 
     func testCheckReturnNumber() {
