@@ -19,7 +19,7 @@ class CalculatorViewController: UIViewController {
 
     private var displayValue: Double {
         get {
-            guard let number = Double(displayLabel.text ?? "0") else {
+            guard let number = Double(displayLabel.text!) else {
                 return 0
             }
             return number
@@ -48,7 +48,7 @@ class CalculatorViewController: UIViewController {
                 isFinishedTypingNumber = false
             } else {
                 displayLabel.text! += calculator.checkdContainDotNumber(number: numValue,
-                                                                        displayText: displayLabel.text ?? "0") ?? ""
+                                                                        displayText: displayLabel.text!) ?? ""
             }
     }
 
