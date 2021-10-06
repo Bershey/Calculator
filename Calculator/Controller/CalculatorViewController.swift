@@ -43,12 +43,12 @@ class CalculatorViewController: UIViewController {
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         guard let numValue = sender.currentTitle  else { return }
-            if isFinishedTypingNumber {
-                displayLabel.text =   calculator.checkedContainFirstDotNumber(number: numValue)
+        if isFinishedTypingNumber && !calculator.checkIsFirstZero(number: numValue, displayText: displayLabel.text!) {
+                displayLabel.text =  calculator.checkedContainFirstDotNumber(number: numValue)
                 isFinishedTypingNumber = false
-            } else {
+            } else if isFinishedTypingNumber == false {
                 displayLabel.text! += calculator.checkdContainDotNumber(number: numValue,
-                                                                        displayText: displayLabel.text!) ?? "0"
+                                                                        displayText: displayLabel.text!)
             }
     }
 

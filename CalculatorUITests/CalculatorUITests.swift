@@ -26,12 +26,42 @@ class CalculatorUITests: XCTestCase {
         numberArray[0].tap()
         numberArray[1].tap()
         dotButton.tap()
+        dotButton.tap()
+        dotButton.tap()
         numberArray[2].tap()
         dotButton.tap()
         for number in 3...9 {
             numberArray[number].tap()
         }
         XCTAssertEqual(result.label, "1.23456789" )
+    }
+
+    func testFirstZero() {
+        let app = XCUIApplication()
+        app.launch()
+        let zero = app.buttons["0"]
+        let one = app.buttons["1"]
+        let dot = app.buttons["dot"]
+        let result = app.staticTexts["result"]
+
+        zero.tap()
+        zero.tap()
+        zero.tap()
+        dot.tap()
+        one.tap()
+        XCTAssertEqual(result.label, "0.1" )
+    }
+
+    func testFirstConsecutiveDot() {
+        let app = XCUIApplication()
+        app.launch()
+        let dot = app.buttons["dot"]
+        let result = app.staticTexts["result"]
+
+        dot.tap()
+        dot.tap()
+        dot.tap()
+        XCTAssertEqual(result.label, "0." )
     }
 
 }

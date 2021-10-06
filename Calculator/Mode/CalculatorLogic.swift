@@ -59,7 +59,18 @@ struct CalculatorLogic {
         return  number == "." ? "0." : number
     }
 
-    func checkdContainDotNumber (number: String, displayText: String) -> String? {
-        return (number == "." && displayText.contains(".")) ? nil : number
+    func checkdContainDotNumber (number: String, displayText: String) -> String {
+        return (number == "." && displayText.contains(".")) ? "" : number
+    }
+
+    func checkIsFirstZero (number: String, displayText: String) -> Bool {
+        if number == "0" {
+            if displayText == "0" {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
     }
 }
