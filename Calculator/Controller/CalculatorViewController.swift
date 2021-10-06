@@ -48,7 +48,7 @@ class CalculatorViewController: UIViewController {
                 isFinishedTypingNumber = false
             } else {
                 displayLabel.text! += calculator.checkdContainDotNumber(number: numValue,
-                                                                        displayText: displayLabel.text!) ?? ""
+                                                                        displayText: displayLabel.text!) ?? "0"
             }
     }
 
