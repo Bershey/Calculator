@@ -14,12 +14,12 @@ class CalculatorViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var isFinishedTypingNumber: Bool = true
+    private var isFinishedTypingNumber = true
     private var calculator = CalculatorLogic()
 
     private var displayValue: Double {
         get {
-            guard let number = Double(displayLabel.text!) else {
+            guard let number = Double(displayLabel.text ?? "0") else {
                 return 0
             }
             return number
@@ -42,24 +42,21 @@ class CalculatorViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
-        if let numValue = sender.currentTitle {
+        guard let numValue = sender.currentTitle  else { return }
             if isFinishedTypingNumber {
-                displayLabel.text =   calculator.checkedNumber(number: numValue)
+                displayLabel.text =   calculator.checkedContainFirstDotNumber(number: numValue)
                 isFinishedTypingNumber = false
             } else {
                 displayLabel.text! += calculator.checkdContainDotNumber(number: numValue,
-                                                                        displayText: displayLabel.text!) ?? ""
+                                                                        displayText: displayLabel.text ?? "0") ?? ""
             }
-        }
     }
 
     @IBAction func calculatorButtonPressed(_ sender: UIButton) {
         isFinishedTypingNumber = true
         calculator.setNumber(displayValue)
-        if let calcMethod = sender.currentTitle {
-            if let result = calculator.calculate(symbol: calcMethod) {
-                displayValue = result
-            }
-        }
+        guard let calcMethod = sender.currentTitle else { return }
+        guard let result = calculator.calculate(symbol: calcMethod) else { return }
+        displayValue = result
     }
 }

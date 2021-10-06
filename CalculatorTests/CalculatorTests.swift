@@ -14,7 +14,7 @@ class CalculatorTests: XCTestCase {
     var calc = CalculatorLogic()
 
     // MARK: - testOperation
-    
+
     func testAdd() {
         calc.intermediateCalculation = (n1: 3, calcMethod: "+")
         let newValue = calc.performTwoNumCalculation(secondNumber: 4)
