@@ -55,18 +55,11 @@ struct CalculatorLogic {
         return nil
     }
 
-    func checkedNumber(number: String) -> String {
-        if number == "." {
-            return "0."
-        } else {
-            return number
-        }
+    func checkedContainFirstDotNumber(number: String) -> String {
+        return  number == "." ? "0." : number
     }
 
     func checkdContainDotNumber (number: String, displayText: String) -> String? {
-        if number == "." && displayText.contains(".") {
-            return nil
-        }
-        return number
+        return (number == "." && displayText.contains(".")) ? nil : number
     }
 }
